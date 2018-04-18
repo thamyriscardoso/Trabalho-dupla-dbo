@@ -32,7 +32,6 @@ buttonsel.addEventListener('click', function (e) {
         while (td.length < 4) {
             if (td[c].firstChild.nodeValue === curso) {
                 console.log("esse curso já existe");
-                contador++;
                 break;
             }
             if ((td[c].firstChild.nodeValue !== curso)) {
