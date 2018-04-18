@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cursos</title>
+</head>
+<body>
+    <div class="adicionar">
+        Adicionar Cursos
+        <input type="text" id="adc">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <div class="select">
+        Cursos:
+        <input list="cursos" id="selc" type="text">
+        <datalist id="cursos">
+            <option value="Administração"></option>
+            <option value="Direito"></option>
+            <option value="Medicina"></option>
+            <option value="Psicologia"></option>
+            <option value="Artes"></option>
+            <option value="Matemática"></option>
+            <option value="História"></option>
+        </datalist>
+        <button id="selecionar">Selecionar</button>
+    </div>
+    <div class="lista">
+      <table>
+          <caption>Escolhas</caption>
+          <thead>
+            <tr>
+                <td>Curso</td>
+                <td>Deletar</td>
+                <td>Mudar prioridade</td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+      </table>
+    </div>
+   
+    <script src="js/main.js">
+    </script>
+</body>
+</html>
