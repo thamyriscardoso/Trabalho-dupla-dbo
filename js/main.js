@@ -10,27 +10,43 @@ buttonadc.addEventListener('click', function (e) {
 });
 
 let buttonsel = document.getElementById('selecionar');
-let contador =1;
+let contador = 1;
 const tbody = document.querySelector('tbody');
 buttonsel.addEventListener('click', function (e) {
     e.preventDefault();
     let p = 0
     let curso = document.getElementById('selc').value;
-    let td = document.querySelectorAll('td');
-    while(curso === td[p]){
-        p = p + 3;
-    }
-    if(contador<4){
+    let td = document.getElementsByClassName('nome');
+    if(contador === 1){
         const bt = `<button>Excluir</button>`;
-        let posicao= contador;
+        let posicao = contador;
         const prioridade = `<input id="prioridade" type="number" max="3" min="1">`
-        const tds = `<td>${curso}</td> <td>${bt}</td> <td>${prioridade}</td>`;
+        const tds = `<td class="nome">${curso}</td> <td>${bt}</td> <td>${prioridade}</td>`;
         const row = `<tr>${tds}</tr>`;
         tbody.innerHTML += row;
         contador++;
     }
-    else{
-        console.log("Você já preencheu todas as opções de curso")
+    if(contador < 5){
+        console.log('oi')
+        let c=0;
+        while (td.length < 4) {
+            if (td[c].firstChild.nodeValue === curso) {
+                console.log("esse curso já existe");
+                contador++;
+                break;
+            }
+            if ((td[c].firstChild.nodeValue !== curso)) {
+                const bt = `<button>Excluir</button>`;
+                let posicao= contador;
+                const prioridade = `<input id="prioridade" type="number" max="3" min="1">`
+                const tds = `<td class="nome">${curso}</td> <td>${bt}</td> <td>${prioridade}</td>`;
+                const row = `<tr>${tds}</tr>`;
+                tbody.innerHTML += row;
+                contador++;
+                break;
+            }
+            c++;
+        }
     }
 });
 tbody.addEventListener('click', function (e) {
