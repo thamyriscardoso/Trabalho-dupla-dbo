@@ -26,7 +26,7 @@ buttonsel.addEventListener('click', function (e) {
         tbody.innerHTML += row;
         contador++;
     }
-    if(contador < 5){
+    if(contador < 4){
         console.log('oi')
         let c=0;
         while (td.length < 4) {
